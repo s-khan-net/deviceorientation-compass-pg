@@ -8,6 +8,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=medium-dpi, user-scalable=0" />
         <title>Quad</title>
         <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+        <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
@@ -20,9 +23,51 @@
         </style>
     </head>
     <body>
-    <div id="compassContainer">
+    <!-- <div id="compassContainer">
         <img src="img/compass.png" id="compass"/>
-    </div>
+    </div> -->
     <div id='main'>saud</div>
+    <div class="container">
+        <!-- <div class="row" style="padding-bottom:12px">
+          <div class="col-xs-2"></div>
+            <div class="col-xs-8">
+              
+            </div>
+            <div class="col-xs-2"></div>
+          </div> -->
+          <div class="row" style="padding-bottom:12px">
+            <div class="col-xs-2"></div>
+            <div class="col-xs-8">
+              <div style="font-size:16px;border-bottom:1px solid #CCC;text-align:center" id="txtCompassError"></div>  
+            </div>
+            <div class="col-xs-2"></div>
+          </div>
+          <div class="row" style="padding-top:32px;">
+            <div class="col-xs-12">
+              <div id="qiblaCircle">
+                <!-- <div style="width: 32px;height:32px;background-color:tramsparent;border-radius: 50%;right: 50%;position: fixed; margin: 0 auto;z-index: 3;" id="kaaba"><img src="img/kaaba.png" width="32px" height="32px" /></div> -->
+                <!-- <div class='deg0'>
+                    <div style="height:4px;width:4px;background-color:red;border-radius:50%"></div>
+                </div> -->
+                <!--         <img src="img/compass.png" id="imgNeedle"> -->
+                <div class="north-needle">
+                  <div style="height:13px;width:13px;background-color:#ff6065;border-radius:50%;position:absolute">
+                    <div style="height:63%;width:63%;background-color:#d80c0c;border-radius:50%;position:relative;top:19%;left:19%"></div>  
+                  </div>
+                </div>
+                <div class="arrow_box" >
+                  <div style="transform:rotate(90deg);padding-left: 50px;letter-spacing: 12px;color: darkgreen;">Qibla</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row" style="padding-top:21px">
+            <div class="col-xs-1"></div>
+            <div class="col-xs-10 infoWTimes">
+              Note: You may have to rotate your device to get a correct reading
+            </div>
+            <div class="col-xs-1"></div>
+          </div>
+        </div>
     </body>
 </html>

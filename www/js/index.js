@@ -11,14 +11,14 @@ var app = {
           window.addEventListener('deviceorientation', function(event) {
                 var alpha,beta,gamma;
                 //Check for iOS property
-                if(event.webkitCompassHeading) {
-                  alert('ios');
-                  alpha = event.webkitCompassHeading;
-                  //Rotation is reversed for iOS
-                  compass.style.WebkitTransform = 'rotate(-' + alpha + 'deg)';
-                }
+                // if(event.webkitCompassHeading) {
+                //   alert('ios');
+                //   alpha = event.webkitCompassHeading;
+                //   //Rotation is reversed for iOS
+                //   compass.style.WebkitTransform = 'rotate(-' + alpha + 'deg)';
+                // }
                 //non iOS
-                else {
+                //else {
                   alpha = event.alpha;
                   beta = event.beta;
                   gamma = event.gamma;
@@ -27,11 +27,12 @@ var app = {
                   //   //Assume Android stock (this is crude, but good enough for our example) and apply offset
                   //   webkitAlpha = alpha-270;
                   // }
-                }
+                //}
                 document.getElementById('main').innerHTML = 'alpha:'+alpha+', beta:'+beta+', gamma:'+gamma;
                 //compass.style.Transform = 'rotate(' + alpha + 'deg)';
-                alpha = alpha+(270*2);
-                compass.style.WebkitTransform = 'rotate('+ alpha + 'deg)';
+                var northrotation = (360-alpha)+'deg' ;
+                //compass.style.WebkitTransform = 'rotate('+ alpha + 'deg)';
+                $('.north-needle').css('-webkit-transform', 'rotate(' + northrotation + ')');
                 //Rotation is reversed for FF
                 //compass.style.MozTransform = 'rotate(-' + alpha + 'deg)'; 
               }, false);
