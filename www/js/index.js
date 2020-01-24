@@ -27,7 +27,7 @@ var app = {
                     webkitAlpha = alpha-270;
                   }
                 }
-                document.getElementById('main').value = 'alpha:'+alpha+', beta:'+beta+', gamma:'+gamma;
+                document.getElementById('main').innerHTML = 'alpha:'+alpha+', beta:'+beta+', gamma:'+gamma;
                 compass.style.Transform = 'rotate(' + alpha + 'deg)';
                 compass.style.WebkitTransform = 'rotate('+ webkitAlpha + 'deg)';
                 //Rotation is reversed for FF
