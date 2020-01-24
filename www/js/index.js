@@ -30,7 +30,7 @@ var app = {
                 }
                 document.getElementById('main').innerHTML = 'alpha:'+alpha+', beta:'+beta+', gamma:'+gamma;
                 //compass.style.Transform = 'rotate(' + alpha + 'deg)';
-                alpha = alpha+270;
+                alpha = alpha+(270*2);
                 compass.style.WebkitTransform = 'rotate('+ alpha + 'deg)';
                 //Rotation is reversed for FF
                 //compass.style.MozTransform = 'rotate(-' + alpha + 'deg)'; 
