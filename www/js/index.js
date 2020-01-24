@@ -22,18 +22,17 @@ var app = {
                   alpha = event.alpha;
                   beta = event.beta;
                   gamma = event.gamma;
-                  webkitAlpha = alpha;
-                  if(!window.chrome) {
-                    alert('!chrome');
-                    //Assume Android stock (this is crude, but good enough for our example) and apply offset
-                    webkitAlpha = alpha-270;
-                  }
+                  // if(!window.chrome) {
+                  //   alert('!chrome');
+                  //   //Assume Android stock (this is crude, but good enough for our example) and apply offset
+                  //   webkitAlpha = alpha-270;
+                  // }
                 }
                 document.getElementById('main').innerHTML = 'alpha:'+alpha+', beta:'+beta+', gamma:'+gamma;
                 compass.style.Transform = 'rotate(' + alpha + 'deg)';
-                compass.style.WebkitTransform = 'rotate('+ webkitAlpha + 'deg)';
+                //compass.style.WebkitTransform = 'rotate('+ webkitAlpha + 'deg)';
                 //Rotation is reversed for FF
-                compass.style.MozTransform = 'rotate(-' + alpha + 'deg)'; 
+                ///compass.style.MozTransform = 'rotate(-' + alpha + 'deg)'; 
               }, false);
         }
     }
