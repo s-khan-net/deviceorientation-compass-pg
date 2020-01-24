@@ -12,7 +12,7 @@ var app = {
                 var alpha,beta,gamma;
                 latQ = 21.422508; //coordinates of qibla
                 lonQ = 39.826188;
-                latC = 12.354321;
+                latC =12.354321;
                 lonC = 76.603293;
                 //Check for iOS property
                 // if(event.webkitCompassHeading) {
@@ -36,7 +36,7 @@ var app = {
                 var northrotation = (360-alpha)+'deg' ;
                 deg = bearing(latC, lonC, latQ, lonQ).toFixed(14);
                 direction = (deg >= 0) ? deg : 360 + deg;
-                disp = Math.round(direction) + Math.round(360 - magneticHeading);
+                disp = Math.round(direction) + Math.round(magneticHeading);
                 document.getElementById('main').innerHTML = 'alpha:'+alpha+', beta:'+beta+', gamma:'+gamma+', heading:'+magneticHeading+', bearing:'+deg+', direction:'+direction+', display:'+disp;
                 //compass.style.Transform = 'rotate(' + alpha + 'deg)';
                 
