@@ -29,7 +29,7 @@ var app = {
                   // }
                 }
                 document.getElementById('main').innerHTML = 'alpha:'+alpha+', beta:'+beta+', gamma:'+gamma;
-                //compass.style.Transform = 'rotate(' + alpha + 'deg)';
+                compass.style.Transform = 'rotate(' + alpha + 'deg)';
                 compass.style.WebkitTransform = 'rotate('+ alpha + 'deg)';
                 //Rotation is reversed for FF
                 //compass.style.MozTransform = 'rotate(-' + alpha + 'deg)'; 
