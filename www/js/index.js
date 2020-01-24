@@ -32,13 +32,13 @@ var app = {
                   //   webkitAlpha = alpha-270;
                   // }
                 //}
-                if(beta>=35 ){
-                  $('#main').html('please keep yiur device in a horizontal position');
-                }
-                if(beta>=-35 ){
-                  $('#main').html('please keep yiur device in a horizontal position');
-                }
-                else{
+                // if(beta>=35 ){
+                //   $('#main').html('please keep your device in a horizontal position');
+                // }
+                // if(beta>=-35 ){
+                //   $('#main').html('please keep your device in a horizontal position');
+                // }
+                // else{
                 var magneticHeading = compassHeading(event.alpha,event.beta,event.gamma);
                 var northrotation = (360-alpha)+'deg' ;
                 deg = bearing(latC, lonC, latQ, lonQ).toFixed(14);
@@ -58,7 +58,7 @@ var app = {
                 $('.arrow_box').css('-webkit-transform', 'rotate(' + disp + 'deg)');
                 //Rotation is reversed for FF
                 //compass.style.MozTransform = 'rotate(-' + alpha + 'deg)'; 
-                }
+                //}
               }, false);
         }
     }
