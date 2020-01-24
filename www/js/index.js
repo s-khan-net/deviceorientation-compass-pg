@@ -32,15 +32,20 @@ var app = {
                   //   webkitAlpha = alpha-270;
                   // }
                 //}
+                if(beta>=35 ){
+                  $('#main').html('please keep yiur device in a horizontal position');
+                }
+                if(beta>=-35 ){
+                  $('#main').html('please keep yiur device in a horizontal position');
+                }
+                else{
                 var magneticHeading = compassHeading(event.alpha,event.beta,event.gamma);
                 var northrotation = (360-alpha)+'deg' ;
                 deg = bearing(latC, lonC, latQ, lonQ).toFixed(14);
                 direction = (deg >= 0) ? deg : 360 + deg;
                 disp = Math.round(direction) + Math.round(magneticHeading);
-                document.getElementById('main').innerHTML = 'alpha:'+alpha+', beta:'+beta+', gamma:'+gamma+', heading:'+magneticHeading+', bearing:'+deg+', direction:'+direction+', display:'+disp;
+                $('#main').html('alpha:'+alpha+', beta:'+beta+', gamma:'+gamma+', heading:'+magneticHeading+', bearing:'+deg+', direction:'+direction+', display:'+disp);
                 //compass.style.Transform = 'rotate(' + alpha + 'deg)';
-                
-                
                 //deg =  (deg * Math.PI / 180) * 180 / Math.PI;
                 // direction = (deg >= 0) ? deg : 360 + deg;
                 // disp = Math.round(direction) + Math.round(360 - magneticHeading);
@@ -53,6 +58,7 @@ var app = {
                 $('.arrow_box').css('-webkit-transform', 'rotate(' + disp + 'deg)');
                 //Rotation is reversed for FF
                 //compass.style.MozTransform = 'rotate(-' + alpha + 'deg)'; 
+                }
               }, false);
         }
     }
