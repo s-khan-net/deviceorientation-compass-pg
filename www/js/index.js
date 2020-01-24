@@ -12,8 +12,8 @@ var app = {
                 var alpha,beta,gamma;
                 latQ = 21.422508; //coordinates of qibla
                 lonQ = 39.826188;
-                latC = 52.4533811;
-                lonC = -1.9281113;
+                latC = 12.354321;
+                lonC = 76.603293;
                 //Check for iOS property
                 // if(event.webkitCompassHeading) {
                 //   alert('ios');
