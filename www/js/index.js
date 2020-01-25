@@ -55,7 +55,7 @@ var app = {
                 //$('.deg0').css('transform','translate('+($('#qiblaCircle').width()/2)+'px)');
                 $('.north-needle').css('margin-left',$('#qiblaCircle').width()/2+'px');
                 $('.north-needle').css('-webkit-transform', 'rotate(' + northrotation + ')');
-                $('.arrow_box').css('-webkit-transform', 'rotate(' + disp + 'deg)');
+                //$('.arrow_box').css('-webkit-transform', 'rotate(' + disp + 'deg)');
                 //Rotation is reversed for FF
                 //compass.style.MozTransform = 'rotate(-' + alpha + 'deg)'; 
                 //}
