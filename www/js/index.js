@@ -40,7 +40,7 @@ var app = {
                 // }
                 // else{
                 var magneticHeading = compassHeading(event.alpha,event.beta,event.gamma);
-                var northrotation = (360-alpha)+'deg' ;
+                var northrotation = alpha+'deg' ;
                 deg = bearing(latC, lonC, latQ, lonQ).toFixed(14);
                 direction = (deg >= 0) ? deg : 360 + deg;
                 disp = Math.round(direction) + Math.round(magneticHeading);
