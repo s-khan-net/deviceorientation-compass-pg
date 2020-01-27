@@ -27,7 +27,7 @@ var app = {
                   beta = event.beta;
                   gamma = event.gamma;
                   if(!window.chrome) {
-                    alert('!chrome');
+                    //alert('!chrome');
                     //Assume Android stock (this is crude, but good enough for our example) and apply offset
                     webkitAlpha = alpha-270;
                   }
