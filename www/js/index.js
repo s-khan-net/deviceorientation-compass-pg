@@ -40,11 +40,11 @@ var app = {
                 // }
                 // else{
                 var magneticHeading = compassHeading(event.alpha,event.beta,event.gamma);
-                var northrotation = alpha+'deg';
+                var northrotation = webkitAlpha+'deg';
                 deg = bearing(latC, lonC, latQ, lonQ).toFixed(14);
                 direction = (deg >= 0) ? deg : 360 + deg;
                 disp = Math.round(direction) + Math.round(magneticHeading);
-                $('#main').html('alpha:'+alpha+'<br> beta:'+beta+'<br> gamma:'+gamma+'<br> heading:'+magneticHeading+'<br> bearing:'+deg+'<br> direction:'+direction+'<br> display:'+disp);
+                $('#main').html('alpha:'+alpha+'<br> beta:'+beta+'<br> gamma:'+gamma+'<br> heading:'+magneticHeading+'<br> bearing:'+deg+'<br> direction:'+direction+'<br> display:'+disp+'<br> webkitalpha:'+webkitAlpha);
                 //compass.style.Transform = 'rotate(' + alpha + 'deg)';
                 //deg =  (deg * Math.PI / 180) * 180 / Math.PI;
                 // direction = (deg >= 0) ? deg : 360 + deg;
