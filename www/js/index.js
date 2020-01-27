@@ -9,29 +9,29 @@ var app = {
         if(window.DeviceOrientationEvent) {
   
           window.addEventListener('deviceorientation', function(event) {
-                var alpha,beta,gamma;
+                var alpha,beta,gamma,webkitAlpha;
                 latQ = 21.422508; //coordinates of qibla
                 lonQ = 39.826188;
                 latC =12.354321;
                 lonC = 76.603293;
                 //Check for iOS property
-                // if(event.webkitCompassHeading) {
-                //   alert('ios');
-                //   alpha = event.webkitCompassHeading;
-                //   //Rotation is reversed for iOS
-                //   compass.style.WebkitTransform = 'rotate(-' + alpha + 'deg)';
-                // }
+                if(event.webkitCompassHeading) {
+                  alert('ios');
+                  alpha = event.webkitCompassHeading;
+                  //Rotation is reversed for iOS
+                  //compass.style.WebkitTransform = 'rotate(-' + alpha + 'deg)';
+                }
                 //non iOS
-                //else {
+                else {
                   alpha = event.alpha;
                   beta = event.beta;
                   gamma = event.gamma;
-                  // if(!window.chrome) {
-                  //   alert('!chrome');
-                  //   //Assume Android stock (this is crude, but good enough for our example) and apply offset
-                  //   webkitAlpha = alpha-270;
-                  // }
-                //}
+                  if(!window.chrome) {
+                    alert('!chrome');
+                    //Assume Android stock (this is crude, but good enough for our example) and apply offset
+                    webkitAlpha = alpha-270;
+                  }
+                }
                 // if(beta>=35 ){
                 //   $('#main').html('please keep your device in a horizontal position');
                 // }
@@ -40,11 +40,11 @@ var app = {
                 // }
                 // else{
                 var magneticHeading = compassHeading(event.alpha,event.beta,event.gamma);
-                var northrotation = alpha+'deg' ;
+                var northrotation = alpha+'deg';
                 deg = bearing(latC, lonC, latQ, lonQ).toFixed(14);
                 direction = (deg >= 0) ? deg : 360 + deg;
                 disp = Math.round(direction) + Math.round(magneticHeading);
-                $('#main').html('alpha:'+alpha+', beta:'+beta+', gamma:'+gamma+', heading:'+magneticHeading+', bearing:'+deg+', direction:'+direction+', display:'+disp);
+                $('#main').html('alpha:'+alpha+'<br> beta:'+beta+'<br> gamma:'+gamma+'<br> heading:'+magneticHeading+'<br> bearing:'+deg+'<br> direction:'+direction+'<br> display:'+disp);
                 //compass.style.Transform = 'rotate(' + alpha + 'deg)';
                 //deg =  (deg * Math.PI / 180) * 180 / Math.PI;
                 // direction = (deg >= 0) ? deg : 360 + deg;
