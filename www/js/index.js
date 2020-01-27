@@ -12,7 +12,7 @@ var app = {
                 var alpha,beta,gamma,webkitAlpha;
                 latQ = 21.422508; //coordinates of qibla
                 lonQ = 39.826188;
-                latC =12.354321;
+                latC = 12.354321;
                 lonC = 76.603293;
                 //Check for iOS property
                 if(event.webkitCompassHeading) {
@@ -43,9 +43,9 @@ var app = {
                 var northrotation = (webkitAlpha+90)+'deg';
                 deg = bearing(latC, lonC, latQ, lonQ).toFixed(14);
                 //direction = (deg >= 0) ? deg : 360 + deg;
-                var qibladir = (Math.round(direction) + (Math.round(webkitAlpha) + 90))+'deg';
+                var qibladir = (Math.round(deg) + (Math.round(webkitAlpha) + 90))+'deg';
                 //disp = Math.round(direction) + Math.round(magneticHeading);
-                $('#main').html('alpha:'+alpha+'<br> beta:'+beta+'<br> gamma:'+gamma+'<br> heading:'+magneticHeading+'<br> bearing:'+deg+'<br> direction:'+direction+'<br> qibladir:'+qibladir+'<br> webkitalpha:'+webkitAlpha);
+                $('#main').html('alpha:'+alpha+'<br> beta:'+beta+'<br> gamma:'+gamma+'<br> heading:'+magneticHeading+'<br> bearing:'+deg+'<br> qibladir:'+qibladir+'<br> webkitalpha:'+webkitAlpha);
                 //compass.style.Transform = 'rotate(' + alpha + 'deg)';
                 //deg =  (deg * Math.PI / 180) * 180 / Math.PI;
                 // direction = (deg >= 0) ? deg : 360 + deg;
