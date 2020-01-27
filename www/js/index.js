@@ -42,7 +42,7 @@ var app = {
                 var magneticHeading = compassHeading(event.alpha,event.beta,event.gamma);
                 var northrotation = (webkitAlpha+90)+'deg';
                 deg = bearing(latC, lonC, latQ, lonQ).toFixed(14);
-                direction = (deg >= 0) ? deg : 360 + deg;
+                //direction = (deg >= 0) ? deg : 360 + deg;
                 var qibladir = (Math.round(direction) + (Math.round(webkitAlpha) + 90))+'deg';
                 //disp = Math.round(direction) + Math.round(magneticHeading);
                 $('#main').html('alpha:'+alpha+'<br> beta:'+beta+'<br> gamma:'+gamma+'<br> heading:'+magneticHeading+'<br> bearing:'+deg+'<br> direction:'+direction+'<br> qibladir:'+qibladir+'<br> webkitalpha:'+webkitAlpha);
