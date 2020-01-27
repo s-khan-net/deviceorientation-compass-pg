@@ -17,7 +17,7 @@ var app = {
                 //Check for iOS property
                 if(event.webkitCompassHeading) {
                   alert('ios');
-                  alpha = event.webkitCompassHeading;
+                  webkitAlpha = event.webkitCompassHeading;
                   //Rotation is reversed for iOS
                   //compass.style.WebkitTransform = 'rotate(-' + alpha + 'deg)';
                 }
@@ -40,7 +40,7 @@ var app = {
                 // }
                 // else{
                 var magneticHeading = compassHeading(event.alpha,event.beta,event.gamma);
-                var northrotation = webkitAlpha+'deg';
+                var northrotation = (webkitAlpha+90)+'deg';
                 deg = bearing(latC, lonC, latQ, lonQ).toFixed(14);
                 direction = (deg >= 0) ? deg : 360 + deg;
                 disp = Math.round(direction) + Math.round(magneticHeading);
