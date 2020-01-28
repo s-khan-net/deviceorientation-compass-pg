@@ -44,7 +44,7 @@ var app = {
                 var magneticHeading = compassHeading(event.alpha,event.beta,event.gamma);
                 //var northrotation = webkitAlpha
                 northbearing = bearing(latC, lonC, latN, lonN).toFixed(14);
-                var northrotation = (Math.round(deg) + Math.round(webkitAlpha))+'deg'; 
+                var northrotation = (Math.round(northbearing) + Math.round(webkitAlpha))+'deg'; 
                 deg = bearing(latC, lonC, latQ, lonQ).toFixed(14);
                 //direction = (deg >= 0) ? deg : 360 + deg;
                 var qibladir = (Math.round(deg) + Math.round(webkitAlpha))+'deg';
