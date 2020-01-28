@@ -43,7 +43,7 @@ var app = {
                 var northrotation = (webkitAlpha)+'deg';
                 deg = bearing(latC, lonC, latQ, lonQ).toFixed(14);
                 //direction = (deg >= 0) ? deg : 360 + deg;
-                var qibladir = (Math.round(deg) + (Math.round(webkitAlpha) + 90))+'deg';
+                var qibladir = (Math.round(deg) + Math.round(webkitAlpha))+'deg';
                 //disp = Math.round(direction) + Math.round(magneticHeading);
                 $('#main').html('alpha:'+alpha+'<br> beta:'+beta+'<br> gamma:'+gamma+'<br> heading:'+magneticHeading+'<br> bearing:'+deg+'<br> qibladir:'+qibladir+'<br> webkitalpha:'+webkitAlpha);
                 //compass.style.Transform = 'rotate(' + alpha + 'deg)';
@@ -57,7 +57,7 @@ var app = {
                 $('.heading-needle').css('height',($('#qiblaCircle').width()+5)+'px');
                 $('.heading-needle').css('margin-left',$('#qiblaCircle').width()/2+'px');
                 $('.north-needle').css('-webkit-transform', 'rotate(' + northrotation + ')');
-                $('.heading-needle').css('-webkit-transform', 'rotate(' + magneticHeading + ')');
+                $('.heading-needle').css('-webkit-transform', 'rotate(' + magneticHeading + 'deg)');
                 $('.arrow_box').css('-webkit-transform', 'rotate(' + qibladir + ')');
                 //Rotation is reversed for FF
                 //compass.style.MozTransform = 'rotate(-' + alpha + 'deg)'; 
