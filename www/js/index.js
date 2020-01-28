@@ -43,13 +43,13 @@ var app = {
                 // else{
                 var magneticHeading = compassHeading(event.alpha,event.beta,event.gamma);
                 //var northrotation = webkitAlpha
-                northbearing = bearing(latC, lonC, latN, lonN).toFixed(14);
-                var northrotation = (Math.round(northbearing) + Math.round(webkitAlpha))+'deg'; 
+                var northbearing = bearing(latC, lonC, latN, lonN).toFixed(14);
+                var northrotation = Math.round(northbearing) + Math.round(webkitAlpha); 
                 deg = bearing(latC, lonC, latQ, lonQ).toFixed(14);
                 //direction = (deg >= 0) ? deg : 360 + deg;
-                var qibladir = (Math.round(deg) + Math.round(webkitAlpha))+'deg';
+                var qibladir = (Math.round(deg) + Math.round(northrotation))+'deg';
                 //disp = Math.round(direction) + Math.round(magneticHeading);
-                $('#main').html('alpha:'+alpha+'<br> beta:'+beta+'<br> gamma:'+gamma+'<br> heading:'+magneticHeading+'<br> bearing:'+deg+'<br> qibladir:'+qibladir+'<br> webkitalpha:'+webkitAlpha);
+                $('#main').html('alpha:'+alpha+'<br> beta:'+beta+'<br> gamma:'+gamma+'<br> heading:'+magneticHeading+'<br> bearing:'+deg+'<br> qibladir:'+qibladir+'<br> webkitalpha:'+webkitAlpha+'<br> northbearing'+northbearing);
                 //compass.style.Transform = 'rotate(' + alpha + 'deg)';
                 //deg =  (deg * Math.PI / 180) * 180 / Math.PI;
                 // direction = (deg >= 0) ? deg : 360 + deg;
@@ -60,7 +60,7 @@ var app = {
                 $('.north-needle').css('margin-left',$('#qiblaCircle').width()/2+'px');
                 $('.heading-needle').css('height',($('#qiblaCircle').width()+5)+'px');
                 $('.heading-needle').css('margin-left',$('#qiblaCircle').width()/2+'px');
-                $('.north-needle').css('-webkit-transform', 'rotate(' + northrotation + ')');
+                $('.north-needle').css('-webkit-transform', 'rotate(' + northrotation + 'deg)');
                 $('.heading-needle').css('-webkit-transform', 'rotate(' + magneticHeading + 'deg)');
                 $('.arrow_box').css('-webkit-transform', 'rotate(' + qibladir + ')');
                 //Rotation is reversed for FF
