@@ -14,8 +14,8 @@ var app = {
                 lonQ = 39.826188;
                 latC = 12.354321;
                 lonC = 76.603293;
-                latN = 83.6397126; // coordinates of north pole
-                lonN = -34.0355523;
+                latN = 90.000000; // coordinates of north pole
+                lonN = 0.000000;
                 //Check for iOS property
                 if(event.webkitCompassHeading) {
                   alert('ios');
