@@ -40,7 +40,7 @@ var app = {
                 // }
                 // else{
                 var magneticHeading = compassHeading(event.alpha,event.beta,event.gamma);
-                var northrotation = (webkitAlpha+90)+'deg';
+                var northrotation = (webkitAlpha)+'deg';
                 deg = bearing(latC, lonC, latQ, lonQ).toFixed(14);
                 //direction = (deg >= 0) ? deg : 360 + deg;
                 var qibladir = (Math.round(deg) + (Math.round(webkitAlpha) + 90))+'deg';
@@ -53,9 +53,11 @@ var app = {
                 //compass.style.WebkitTr\ansform = 'rotate('+ alpha + 'deg)';
                 $('.arrow_box').css('height',$('#qiblaCircle').width()+'px');
                 $('.north-needle').css('height',($('#qiblaCircle').width()+5)+'px');
-                //$('.deg0').css('transform','translate('+($('#qiblaCircle').width()/2)+'px)');
                 $('.north-needle').css('margin-left',$('#qiblaCircle').width()/2+'px');
+                $('.heading-needle').css('height',($('#qiblaCircle').width()+5)+'px');
+                $('.heading-needle').css('margin-left',$('#qiblaCircle').width()/2+'px');
                 $('.north-needle').css('-webkit-transform', 'rotate(' + northrotation + ')');
+                $('.heading-needle').css('-webkit-transform', 'rotate(' + magneticHeading + ')');
                 $('.arrow_box').css('-webkit-transform', 'rotate(' + qibladir + ')');
                 //Rotation is reversed for FF
                 //compass.style.MozTransform = 'rotate(-' + alpha + 'deg)'; 

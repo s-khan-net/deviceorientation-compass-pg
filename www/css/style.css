@@ -56,3 +56,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c4dbfff3', e
   margin:0 auto;
   /*border:1px solid red;*/
 }
+.heading-needle {
+  position: fixed;
+  width:10px;
+  height:200px;
+  margin:0 auto;
+  /*border:1px solid red;*/
+}
