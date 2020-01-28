@@ -14,6 +14,8 @@ var app = {
                 lonQ = 39.826188;
                 latC = 12.354321;
                 lonC = 76.603293;
+                latN = 83.6397126; // coordinates of north pole
+                lonN = -34.0355523;
                 //Check for iOS property
                 if(event.webkitCompassHeading) {
                   alert('ios');
@@ -40,7 +42,9 @@ var app = {
                 // }
                 // else{
                 var magneticHeading = compassHeading(event.alpha,event.beta,event.gamma);
-                var northrotation = (webkitAlpha)+'deg';
+                //var northrotation = webkitAlpha
+                northbearing = bearing(latC, lonC, latN, lonN).toFixed(14);
+                var northrotation = (Math.round(deg) + Math.round(webkitAlpha))+'deg'; 
                 deg = bearing(latC, lonC, latQ, lonQ).toFixed(14);
                 //direction = (deg >= 0) ? deg : 360 + deg;
                 var qibladir = (Math.round(deg) + Math.round(webkitAlpha))+'deg';
